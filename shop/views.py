@@ -4,11 +4,6 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from .models import Product, Order, OrderItem
 
-from django.http import JsonResponse
-from django.views import View
-from django.core import serializers
-from .models import Product
-
 # Create your views here.
 
 
@@ -36,6 +31,11 @@ class OrderFormView(FormView):
             )
         return super().form_valid(form)
 
+
+from django.http import JsonResponse
+from django.views import View
+from django.core import serializers
+from .models import Product
 
 class ProductJsonView(View):
     def get(self, request, *args, **kwargs):
