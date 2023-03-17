@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from .models import Product, Order, OrderItem
+from django import forms
+from shop.views import OrderForm
 
 # Create your views here.
 
@@ -10,7 +12,6 @@ from .models import Product, Order, OrderItem
 class ProductListView(ListView):
     model = Product
     template_name = 'product_list.html'
-
 
 class OrderFormView(FormView):
     template_name = 'order_form.html'
